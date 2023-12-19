@@ -36,7 +36,7 @@ const Body = () => {
           {/* <div className={classes.body__backContent}> */}
           <div
             className={`${classes.body__backContent} ${
-              flipped ? classes._flipped : ""
+              flipped ? classes.body__backContent_flipped : ""
             }`}
           >
             {page.text.split("\n").map((line, index) => (
