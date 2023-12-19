@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.aside {
+  display: flex;
+  background-color: $header-back-ground;
+  width: 250px;
+  height: 100%;
+  padding: 0 1.5rem ;
+
+  &__content {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: $primary;
+   position: relative;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    
+    a {
+        text-decoration: none;
+        color: white;
+
+    }
+  }
+}

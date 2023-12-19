@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+
+.header {
+  background-color: $header-back-ground;
+  font-family: $Poppins;
+  width: 100%;
+  padding: 0 1.5rem;
+  transition: 0.5s;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $primary;
+    height: 100%;
+    position: relative;
+  }
+
+  &__logo {
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logoImg {
+    width: 80px;
+    height: 80px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-right: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $primary;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__content {
+      flex-direction: column;
+    }
+
+    &__logo, &__logoImg, &__nav {
+      margin-top: 1rem;
+    }
+  }
+}

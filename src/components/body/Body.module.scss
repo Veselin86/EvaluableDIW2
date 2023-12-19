@@ -1,0 +1,81 @@
+@import "../../scss/variables";
+
+.body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $Poppins;
+  background-color: rgb(194, 114, 127);
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    perspective: 1000px;
+
+  }
+
+  &__button {
+    margin: 0 30px;
+    transition: transform 0.5s;
+
+    button {
+      background-color: rgb(194, 114, 127);
+      border: none;
+    }
+  }
+
+  &__book {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }    
+
+  &__frontPage {
+    z-index: 1;
+  }
+  &__backPage {
+    z-index: 0;
+  }
+
+  &__frontContent,
+  &__backContent {
+    background-color: white;
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin: 0;
+    transform-origin: left;
+    transition: transform 0.5;
+    border-left: solid 2px rgb(194, 114, 127);
+    transform-style: preserve-3d;
+
+    &_flipped {
+      transform: rotateY(180deg);
+      transition: transform 0.5s;
+    }
+
+    img {
+      width: 350px;
+      height: 500px;
+      margin: 1em 0;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    p {
+      margin: 1em 0;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+}

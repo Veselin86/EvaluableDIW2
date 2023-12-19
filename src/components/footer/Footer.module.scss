@@ -1,0 +1,58 @@
+@import "../../scss/variables";
+
+.footer {
+    background-color: $header-back-ground;
+    color: $primary;
+    font-family: $Poppins;
+    margin-top: auto;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__sm {
+        display: flex;
+        margin: 0 20px ;
+        width: 40px;
+        height: 40px;
+        color:$primary;
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    &__links {
+        display: flex;
+        margin-top: 1rem;
+        a {
+            color: $primary;
+            text-decoration: none;
+            margin-right: 1rem;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    &__rights {
+        display: flex;
+        margin-top: 1rem;
+        text-align: right;
+    }
+
+    @media (max-width: 600px) {
+        &__content {
+            flex-direction: column;
+        }
+
+        &__contact, &__sm {
+            margin-bottom: 1rem;
+        }
+    }
+}
