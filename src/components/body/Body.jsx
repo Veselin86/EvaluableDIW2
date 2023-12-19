@@ -26,22 +26,28 @@ const Body = () => {
     }
   };
 
-
   const pageContent = () => {
     if (isCoverPage) {
-      return <img 
-        src={"/tales/images/cover.png"} 
-        alt="Portada del cuento" />;
+      return <img src={"/tales/images/cover.png"} alt="Portada del cuento" />;
     } else {
       const page = tales[actualTale].pages[actualPage - 1];
       return (
         <div className={classes.body__content}>
-          <div className={classes.body__backContent}>
+          {/* <div className={classes.body__backContent}> */}
+          <div
+            className={`${classes.body__backContent} ${
+              flipped ? classes._flipped : ""
+            }`}
+          >
             {page.text.split("\n").map((line, index) => (
               <p key={index}>{line}</p>
             ))}
           </div>
-          <div className={classes.body__frontContent}>
+          <div
+            className={`${classes.body__frontContent} ${
+              flipped ? classes.flipped : ""
+            }`}
+          >
             <img
               src={page.image}
               alt={`Ilustración de la página ${actualPage}`}
