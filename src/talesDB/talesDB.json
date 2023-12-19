@@ -22,5 +22,29 @@
     ],
 
     "endPage": "Autor: Cuento tradicional del folklor bulgaro"
+  },
+  {
+    "id": 2,
+
+    "title": "Ciruelas por basura",
+
+    "cover": "/tales/images/cover.png",
+
+    "pages": [
+      {
+        "text": "Había una vez un hombre que tenía un hijo. Cuando el hijo creció y estuvo listo para casarse, su padre comenzó a pensar en cómo encontrarle una buena esposa, alguien que fuera adecuada para él.\nPensó y pensó, y finalmente se le ocurrió un plan. Cargó un carro con ciruelas y se fue a venderlas por los pueblos.\n-¡Vendo ciruelas a cambio de basura, ciruelas por basura!\nMujeres, chicas jóvenes, ancianas y novias comenzaron a barrer sus casas para competir por quién podía recoger más basura y así obtener más ciruelas. Y había basura en abundancia, dada por Dios. Una traía un saco lleno, otra un canasto, otra un delantal lleno. Llevaban la basura y se jactaban:",
+        "image": "../../tales/images/1.png"
+      },
+      {
+        "text": "-¡Mira cuánta basura he recogido de mi casa! Qué bueno que vino este loco vendedor de ciruelas para que pudiéramos dársela, ¡en lugar de amontonarla en las esquinas!\n-¡Yo recogí toda esta basura y todavía tengo más para recoger!\n-¡Yo no podría recoger toda esta basura en un año! Se ha acumulado tanto, tanto como quieras. Ahora, rápidamente barrí un poco porque quería algunas ciruelas.\nY el hombre recogía la basura y daba ciruelas. Todos estaban contentos y él estaba feliz, no podía dejar de sonreír y alegrarse. Finalmente, llegó una hermosa joven. Ella llevaba un poco de basura en un pañuelo y también quería comprar ciruelas.",
+        "image": "../../tales/images/2.png"
+      },
+      {
+        "text": "-Ah, hermosa joven, has recogido muy poco. ¿Qué tipo de ciruelas puedo darte por tan poca basura?\n-Traería más, señor, pero no tenemos, no tenemos nada. Esto ni siquiera es nuestro, me lo dieron los vecinos porque les ayudé a barrer.\nCuando el hombre escuchó esto, se alegró mucho. Una chica tan limpia y trabajadora, que no guarda ni un grano de polvo en su casa, sería la mejor ama de casa.\nEntonces, le pidió que se casara con su hijo. La casó con él y tuvieron mucho éxito.",
+        "image": "../../tales/images/3.png"
+      }  
+    ],
+
+    "endPage": "Autor: Cuento tradicional del folklor bulgaro"
   }
 ]
