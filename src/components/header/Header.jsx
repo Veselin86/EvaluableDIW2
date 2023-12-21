@@ -1,12 +1,14 @@
 import classes from "./Header.module.scss";
 import logo from "../../images/logo.png";
+import tales from "../../talesDB/talesDB.json";
+
 // import tale from '../../tales/talesDB.json';
 
 // import { logo } from "../../images/logo.png";
 // import { BiMenuAltRight } from "react-icons/bi";
 // import { AiOutlineClose } from "react-icons/ai";
 
-const Header = () => {
+const Header = ({ onSelectTale }) => {
   return (
     <header className={classes.header}>
       <div className={classes.header__content}>
@@ -17,7 +19,18 @@ const Header = () => {
         <nav className={classes.header__nav}>
           <ul>
             <li>
-              <a href="/">Cuento 1</a>
+              <select
+                onChange={(e) => onSelectTale(parseInt(e.target.value, 10))}
+              >
+                <option value="-1" disabled selected>
+                  Cuentos
+                </option>
+                {tales.map((tale, index) => (
+                  <option key={index} value={index}>
+                    {tale.title}
+                  </option>
+                ))}
+              </select>
             </li>
             <li>
               <a href="/">Cuento 2</a>
