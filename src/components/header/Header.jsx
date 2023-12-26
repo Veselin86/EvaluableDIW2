@@ -1,5 +1,5 @@
 import classes from "./Header.module.scss";
-import logo from "../../images/logo.png";
+import logo from "/images/logo.png";
 import tales from "../../talesDB/talesDB.json";
 
 // import tale from '../../tales/talesDB.json';
@@ -13,16 +13,21 @@ const Header = ({ onSelectTale }) => {
     <header className={classes.header}>
       <div className={classes.header__content}>
         <div className={classes.header__logo}>
-          <img className={classes.header__logoImg} src={logo} alt="logo" />
-          <h2>Cuentos infantiles</h2>
+          <h2>EL MUNDO DE CUENTOS</h2>
+        </div>
+        <div>
+          <img src={logo} alt="logo" className={classes.header__logoImg} />
+          {/* <div className={classes.header__particle} style={{ top: "10px", left: "20px" }}></div>
+          <div className={classes.header__particle} style={{ top: "15px", left: "30px" }}></div> */}
         </div>
         <nav className={classes.header__nav}>
           <ul>
             <li>
               <select
                 onChange={(e) => onSelectTale(parseInt(e.target.value, 10))}
+                defaultValue="-1"
               >
-                <option value="-1" disabled selected>
+                <option value="-1" disabled>
                   Cuentos
                 </option>
                 {tales.map((tale, index) => (
@@ -33,11 +38,11 @@ const Header = ({ onSelectTale }) => {
               </select>
             </li>
             <li>
-              <a href="/">Cuento 2</a>
+              <a href="/">Catalogo</a>
             </li>
-            <li>
+            {/* <li>
               <a href="/">Cuento 3</a>
-            </li>
+            </li> */}
           </ul>
         </nav>
         {/* <div className={classes.header__button}>

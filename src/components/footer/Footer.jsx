@@ -1,10 +1,15 @@
+import { useState, useEffect } from 'react';
 import classes from "./Footer.module.scss";
-import facebook from "../../images/facebook.svg";
-import twitter from "../../images/twitter.svg";
-import instagram from "../../images/instagram.svg";
-import youtube from "../../images/youtube.svg";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const [dateTime, setDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setDateTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <footer className={classes.footer}>
       <div className={classes.footer__content}>
@@ -13,14 +18,19 @@ const Footer = () => {
           <a href="/">Términos de Uso</a>
           <a href="/">Mapa del Sitio</a>
         </div>
-        <img className={classes.footer__sm} src={facebook} alt="facebook" />
-        <img className={classes.footer__sm} src={twitter} alt="twitter" />
-        <img className={classes.footer__sm} src={instagram} alt="instagram" />
-        <img className={classes.footer__sm} src={youtube} alt="youtube" />
+        <div className={classes.footer__sm}>
+          <FaFacebook />
+          <FaTwitter />
+          <FaInstagram />
+          <FaYoutube />
+        </div>
+        <div className={classes.footer__rights}>
+          <p>© {dateTime.getFullYear()} Maded by Veselin Vladimirov Veselinov</p>
+          <p>Todos los derechos reservados</p>
+        </div>
       </div>
-      <div className={classes.footer__rights}>
-        © {new Date().getFullYear()} Maded by Veselin Vladimirov Veselinov. 
-        Todos los derechos reservados.
+      <div className={classes.footer__datetime}>
+        {dateTime.toLocaleDateString()} {dateTime.toLocaleTimeString()}
       </div>
     </footer>
   );

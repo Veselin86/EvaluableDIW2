@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import classes from "./Body.module.scss";
+import classes from "./Tale.module.scss";
 import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import tales from "../../talesDB/talesDB.json";
 
-const Body = ({ selectedTale }) => {
-  const styleCover = { width: "500px", height: "700px" };
+const Tale = ({ selectedTale }) => {
+  const styleCover = { width: "350px", height: "600px" };
   const styleEndPage = { fontSize: "40px", textAlign: "center" };
-  const styleBotton = { color: "rgb(61, 61, 128)", fontSize: "80px" };
+  const styleBotton = { fontSize: "80px" };
   const [actualPage, setActualPage] = useState(0);
   const [actualTale, setActualTale] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -137,4 +137,4 @@ const Body = ({ selectedTale }) => {
   );
 };
 
-export default Body;
+export default Tale;
