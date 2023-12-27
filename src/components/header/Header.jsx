@@ -10,7 +10,7 @@ import moonIcon from "/images/moon.png";
 
 const Header = ({ onSelectTale, onSunClick, onMoonClick}) => {
   
-  const imgStyle = { width: "50px", height: "50px"};
+  const imgStyle = { width: "80px", height: "80px"};
   
   return (
     <header className={classes.header}>

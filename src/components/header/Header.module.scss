@@ -1,5 +1,8 @@
 @import "../../scss/variables";
 
+$header-height: 300px;
+$footer-height: 300px;
+
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -83,16 +86,11 @@
     // }
   }
 
-  &__day, &__night {
-    width: 50px;
-    height: 50px;
-  }
-
   &__particle {
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: #fff; // o cualquier color que prefieras
+    background-color: #fff;
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
@@ -129,15 +127,29 @@
 
   @media (max-width: 768px) {
     &__content {
+      position: relative;
       flex-direction: column;
+      align-items: center;
+      height: auto;
     }
 
-    &__logo,
+    &__logo {
+      font-size: 1rem;
+    }
+
     &__moon,
-    &__logoImg,
-    &__sun,
-    &__nav {
-      margin-top: 1rem;
+    &__sun {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &__moon {
+      left: 10px;
+    }
+
+    &__sun {
+      right: 10px;
     }
   }
 }
