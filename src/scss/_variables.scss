@@ -21,13 +21,15 @@ $text-back-ground: rgb(218, 188, 193);
 /* border radius */
 $border-radius: 1.5rem;
 
-/*spacing*/
+/* spacing */
 $spacing-md: 16px;
 $spacing-lg: 32px;
 
 /* header height */
-$header-height: 100px;
+$header-height: 300px;
+$footer-height: 300px;
 
+/* mixings */
 @mixin breakpoint($point) {
   @if $pont == md {
     @media (min-width: 600px) {
@@ -35,6 +37,17 @@ $header-height: 100px;
     }
   }
 }
+
+/*breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);*/
+
+
 /*
 
 // Variables (Play with these) 

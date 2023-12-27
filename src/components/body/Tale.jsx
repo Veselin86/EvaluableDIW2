@@ -4,9 +4,14 @@ import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import tales from "../../talesDB/talesDB.json";
 
 const Tale = ({ selectedTale }) => {
-  const styleCover = { width: "350px", height: "600px" };
+  const styleCover = {
+    width: "400px",
+    height: "550px",
+    margin: "0",
+    padding: "0",
+  };
   const styleEndPage = { fontSize: "40px", textAlign: "center" };
-  const styleBotton = { fontSize: "80px" };
+  const styleBotton = { fontSize: "40px" };
   const [actualPage, setActualPage] = useState(0);
   const [actualTale, setActualTale] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -64,7 +69,7 @@ const Tale = ({ selectedTale }) => {
 
     if (actualPage === 0) {
       return (
-        <div className={classes.body__frontContent}>
+        <div className={classes.body__frontContent} onClick={nextPage}>
           <img
             src={tales[actualTale].cover}
             alt="Portada del cuento"
@@ -77,6 +82,7 @@ const Tale = ({ selectedTale }) => {
       return (
         <div
           className={classes.body__backContent}
+          onClick={prevPage}
           style={{ zIndex: isFlipped(1) ? 1 : 0 }}
         >
           {endPageLines.map((line, index) => (
@@ -90,12 +96,13 @@ const Tale = ({ selectedTale }) => {
       const page = tales[actualTale].pages[actualPage - 1];
       return (
         <div
-          className={`${classes.body__content} ${
-            flipped ? classes.body__content_flipped : ""
+          className={`${classes.body__page} ${
+            flipped ? classes.body__page_flipped : ""
           }`}
         >
           <div
             className={classes.body__backContent}
+            onClick={prevPage}
             style={{ zIndex: isFlipped(1) ? 1 : 0 }}
           >
             {page.text.split("\n").map((line, index) => (
@@ -104,6 +111,7 @@ const Tale = ({ selectedTale }) => {
           </div>
           <div
             className={classes.body__frontContent}
+            onClick={nextPage}
             style={{ zIndex: isFlipped(1) ? 1 : 0 }}
           >
             <img
@@ -131,6 +139,11 @@ const Tale = ({ selectedTale }) => {
           <button onClick={nextPage} style={styleBotton}>
             <FaChevronCircleRight />
           </button>
+        </div>
+        <div>
+          {/* <div className={classes.body__rotateDevice}>
+            <img src="/images/rotate-device.png" alt="Gira tu dispositivo" />
+          </div> */}
         </div>
       </div>
     </div>

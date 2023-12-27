@@ -14,10 +14,10 @@
   &__day, &__night {
     width: 100px;
     height: 100px;
-    position: absolute;
+    position: fixed;
     top: 100px;
     cursor: pointer;
-    z-index: 10;
+    z-index: 2;
   }
 
   &__day {

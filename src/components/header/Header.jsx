@@ -1,24 +1,36 @@
 import classes from "./Header.module.scss";
 import logo from "/images/logo.png";
 import tales from "../../talesDB/talesDB.json";
-
-// import tale from '../../tales/talesDB.json';
+import sunIcon from "/images/sun.png";
+import moonIcon from "/images/moon.png";
 
 // import { logo } from "../../images/logo.png";
 // import { BiMenuAltRight } from "react-icons/bi";
 // import { AiOutlineClose } from "react-icons/ai";
 
-const Header = ({ onSelectTale }) => {
+const Header = ({ onSelectTale, onSunClick, onMoonClick}) => {
+  
+  const imgStyle = { width: "50px", height: "50px"};
+  
   return (
     <header className={classes.header}>
       <div className={classes.header__content}>
+        <div className={classes.header__moon}>
+          <img
+            src={moonIcon}
+            alt="Luna"
+            onClick={onMoonClick}
+            className={classes.background__night}
+            style={imgStyle}
+          />
+        </div>
         <div className={classes.header__logo}>
           <h2>EL MUNDO DE CUENTOS</h2>
         </div>
         <div>
           <img src={logo} alt="logo" className={classes.header__logoImg} />
           {/* <div className={classes.header__particle} style={{ top: "10px", left: "20px" }}></div>
-          <div className={classes.header__particle} style={{ top: "15px", left: "30px" }}></div> */}
+           <div className={classes.header__particle} style={{ top: "15px", left: "30px" }}></div> */}
         </div>
         <nav className={classes.header__nav}>
           <ul>
@@ -40,15 +52,21 @@ const Header = ({ onSelectTale }) => {
             <li>
               <a href="/">Catalogo</a>
             </li>
-            {/* <li>
-              <a href="/">Cuento 3</a>
-            </li> */}
           </ul>
         </nav>
+        <div className={classes.header__sun}>
+          <img
+            src={sunIcon}
+            alt="Sol"
+            onClick={onSunClick}
+            className={classes.background__day}
+            style={imgStyle}
+          />
+        </div>
         {/* <div className={classes.header__button}>
-          <BiMenuAltRight />
-          <button>CTA Page</button>
-        </div> */}
+           <BiMenuAltRight />
+           <button>CTA Page</button>
+         </div> */}
       </div>
     </header>
   );
