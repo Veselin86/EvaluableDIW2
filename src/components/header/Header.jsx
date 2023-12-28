@@ -15,7 +15,23 @@ const Header = ({ onSelectTale, onSunClick, onMoonClick}) => {
   return (
     <header className={classes.header}>
       <div className={classes.header__content}>
-        <div className={classes.header__moon}>
+        <div className={classes.header__logo}>
+          <h2>EL MUNDO <br /> DE CUENTOS</h2>
+        </div>
+        <div>
+        <div className={classes.header__sun}>
+          <img
+            src={sunIcon}
+            alt="Sol"
+            onClick={onSunClick}
+            className={classes.background__day}
+            style={imgStyle}
+          />
+        </div>
+          <img src={logo} alt="logo" className={classes.header__logoImg} />
+          {/* <div className={classes.header__particle} style={{ top: "10px", left: "20px" }}></div>
+           <div className={classes.header__particle} style={{ top: "15px", left: "30px" }}></div> */}
+           <div className={classes.header__moon}>
           <img
             src={moonIcon}
             alt="Luna"
@@ -24,13 +40,6 @@ const Header = ({ onSelectTale, onSunClick, onMoonClick}) => {
             style={imgStyle}
           />
         </div>
-        <div className={classes.header__logo}>
-          <h2>EL MUNDO DE CUENTOS</h2>
-        </div>
-        <div>
-          <img src={logo} alt="logo" className={classes.header__logoImg} />
-          {/* <div className={classes.header__particle} style={{ top: "10px", left: "20px" }}></div>
-           <div className={classes.header__particle} style={{ top: "15px", left: "30px" }}></div> */}
         </div>
         <nav className={classes.header__nav}>
           <ul>
@@ -54,15 +63,6 @@ const Header = ({ onSelectTale, onSunClick, onMoonClick}) => {
             </li>
           </ul>
         </nav>
-        <div className={classes.header__sun}>
-          <img
-            src={sunIcon}
-            alt="Sol"
-            onClick={onSunClick}
-            className={classes.background__day}
-            style={imgStyle}
-          />
-        </div>
         {/* <div className={classes.header__button}>
            <BiMenuAltRight />
            <button>CTA Page</button>

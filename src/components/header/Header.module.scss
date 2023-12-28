@@ -74,7 +74,9 @@ $footer-height: 300px;
     text-align: center;
   }
 
-  &__logoImg {
+  &__logoImg,
+  &__sun,
+  &__moon {
     width: 100px;
     height: 100px;
     display: inline-block;
@@ -143,8 +145,6 @@ $footer-height: 300px;
     &__moon,
     &__sun {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
     }
 
     &__moon {
