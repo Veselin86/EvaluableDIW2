@@ -49,7 +49,8 @@ $footer-height: 300px;
   background-color: $header-back-ground;
   font-family: $Poppins;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0;
+  margin: 0;
   transition: 0.5s;
   z-index: 1;
   position: relative;
@@ -60,6 +61,8 @@ $footer-height: 300px;
     justify-content: space-between;
     color: $header-color;
     height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
     position: relative;
     z-index: 1;
   }
@@ -86,15 +89,15 @@ $footer-height: 300px;
     // }
   }
 
-  &__particle {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    opacity: 0;
-    pointer-events: none;
-  }
+  // &__particle {
+  //   position: absolute;
+  //   width: 5px;
+  //   height: 5px;
+  //   background-color: #fff;
+  //   border-radius: 50%;
+  //   opacity: 0;
+  //   pointer-events: none;
+  // }
 
   ul {
     list-style: none;
