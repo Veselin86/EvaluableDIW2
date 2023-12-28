@@ -1,5 +1,7 @@
 @import "../../scss/variables";
 
+$random-translate: random(100) - 50;
+
 .background {
   &__container {
     position: fixed;
@@ -46,8 +48,6 @@
   }
   &__butterfly {
     position: absolute;
-    font-size: 30px;
-    color: #fdd835;
     animation: fly ease-in-out 4s infinite;
     
     &:nth-child(odd) {
@@ -63,11 +63,11 @@
 
 @keyframes fly {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0) scale(1) rotate(-20deg);
     opacity: 1;
   }
   50% {
-    transform: translateY(-50px) scale(1.2);
+    transform: translateY(- 50px) scale(1.2) rotate((20deg));
     opacity: 0.8;
   }
 }

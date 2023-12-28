@@ -8,7 +8,7 @@ function Background({ theme }) {
 
   useEffect(() => {
     let interval;
-      if (theme === "night") {
+    if (theme === "night") {
       const newStars = Array.from({ length: 50 }, () => ({
         id: Math.random(),
         top: `${Math.random() * 100}%`,
@@ -22,32 +22,25 @@ function Background({ theme }) {
       setButterflies(generateButterflies());
       interval = setInterval(() => {
         setButterflies(generateButterflies());
-      }, 5000);    
+      }, 5000);
     }
     return () => clearInterval(interval);
   }, [theme]);
 
-  // useEffect(() => {
-  //   let interval;
-  //   if (theme === 'day') {
-  //     setButterflies(generateButterflies());
-  //     interval = setInterval(() => {
-  //       setButterflies(generateButterflies());
-  //     }, 5000); // Crea nuevas mariposas cada 5 segundos
-  //   }
-  //   return () => clearInterval(interval);
-  // }, [theme]);
-
   const generateButterflies = () => {
     return Array.from({ length: 10 }, () => ({
       id: Math.random(),
-      style: generateRandomStyle(),
     }));
   };
 
   const generateRandomStyle = () => {
     const randomColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    const randomRotation = Math.random() * 360;
+    const randomTranslateY = Math.random() * 100 - 50;
+    const randomTranslateX = Math.random() * 100 - 50;
     return {
+      position: `absolute`,
+      transform: `translate(${randomTranslateX}px, ${randomTranslateY}px) rotate(${randomRotation}deg)`,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       fontSize: `${2 + Math.random() * 3}rem`,

@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+/* fonts */
+/* colors */
+/* border radius */
+/* spacing */
+/* header height */
+/* mixings */
+/*breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);*/
+/*
+
+// Variables (Play with these) 
+$rainbow-diameter: 300px;
+$rainbow-thickness: 60px;
+$animation-duration: 6s;
+$background-colour: #1A3256;
+$rainbow-filter: hue-rotate(-15deg) contrast(95%);
+$rainbow-opacity: 1;
+$rainbow-colours:   
+  #FF0000, // red
+  #FF7F00, // orange
+  #FFFF00, // yellow
+  #00FF00, // green
+  #0000FF, // blue
+  #4B0082, // indigo
+  #9400D3; // violet
+
+// Leave these alone
+$rainbow-radius: $rainbow-diameter / 2;
+$colour-band-width: $rainbow-thickness / length($rainbow-colours);
+
+// Generate a rainbow gradient
+@mixin rainbowGradient($type) {
+
+  // Base gradient
+  $rainbow-gradient: 
+    circle at center,
+    transparent,
+    transparent $rainbow-radius - $rainbow-thickness,
+    nth($rainbow-colours, -1) $rainbow-radius - $rainbow-thickness;
+
+  // Generate banded or smooth radial gradient
+  @for $i from 1 through length($rainbow-colours) {
+
+    // Next colour
+    $colour: nth($rainbow-colours, -$i);
+
+    // Start of band
+    $rainbow-gradient: append(
+      $rainbow-gradient,
+      $colour $rainbow-radius - ($rainbow-thickness - 
+        if(
+          $type == "smooth",
+          // Smooth: Offset the band start by half a band for better blending
+          $colour-band-width + ($colour-band-width / (length($rainbow-colours))),
+          // Bands: Do not offset the band
+          $colour-band-width
+        ) * ($i - 1)
+      )
+    );
+
+    // End of band (only use this for type == band)
+    @if($type == "bands") {
+      $rainbow-gradient: append(
+        $rainbow-gradient,
+        $colour $rainbow-radius - ($rainbow-thickness - $colour-band-width * $i)
+      );
+    }
+  }
+
+  background: radial-gradient($rainbow-gradient);
+}
+
+// the rainbow element
+@mixin rainbow($type) {
+  &::before {
+    content: '';
+    position: absolute;
+    width: $rainbow-diameter;
+    height: $rainbow-diameter;
+    filter: $rainbow-filter;
+    opacity: $rainbow-opacity;
+    border-radius: 50%;
+    @include rainbowGradient($type);
+  }
+}
+
+// Rainbow container
+.rainbow {
+  width: $rainbow-diameter;
+  height: $rainbow-radius;
+  margin: 0px;
+  position: relative;
+  overflow: hidden;
+
+  // Rainbow classes
+  &.bands { @include rainbow("bands"); }
+  &.smooth { @include rainbow("smooth"); }
+
+  // Animation element
+  &::after {
+    content: '';
+    position: absolute;
+    transform-origin: $rainbow-radius $rainbow-radius;
+    width: $rainbow-diameter;
+    height: $rainbow-radius;
+    background-color: $background-colour;
+    animation: wipe $animation-duration ease-in-out infinite;
+  }
+}
+
+// Wipe animation
+@keyframes wipe {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(180deg); }
+  70% { transform: rotate(180deg); }
+  90% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+html, body {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: $background-colour;
+}
+*/
+.body {
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.body__content, .body__page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 0.5;
+}
+.body__content_flipped, .body__page_flipped {
+  transform: rotateY(180deg);
+  transform: translateX(0%);
+}
+.body__button {
+  cursor: pointer;
+}
+.body__button button {
+  background: none;
+  border: none;
+  color: rgb(107, 15, 126);
+}
+.body__book {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+  perspective: 1500px;
+}
+.body__frontPage {
+  z-index: 1;
+  backface-visibility: hidden;
+}
+.body__backPage {
+  z-index: 0;
+}
+.body__frontContent, .body__backContent {
+  background-color: rgb(218, 188, 193);
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  border-left: solid 2px rgb(43, 7, 13);
+}
+.body__frontContent img, .body__backContent img {
+  width: 380px;
+  height: 530px;
+  margin: 1em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1.5rem;
+}
+.body__frontContent p, .body__backContent p {
+  margin: 1em 0;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+@media (max-width: 768px) {
+  .body__content, .body__page {
+    flex-direction: column;
+  }
+  .body__content__book, .body__page__book {
+    padding-top: 500px;
+    padding-bottom: 500px;
+    height: calc(100vh - 500px - 500px);
+  }
+  .body__content__frontContent, .body__content__backContent, .body__page__frontContent, .body__page__backContent {
+    cursor: pointer;
+    width: 400px;
+    height: 550px;
+    overflow-y: auto;
+    padding: auto;
+    margin: auto;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .body__content img, .body__page img {
+    width: 100%;
+    height: auto;
+  }
+  .body__content p, .body__page p {
+    font-size: 4vw;
+    line-height: 1.4;
+  }
+  .body__button {
+    visibility: hidden;
+  }
+}/*# sourceMappingURL=Tale.module.css.map */
