@@ -10,8 +10,8 @@ const Tale = ({ selectedTale }) => {
     margin: "0",
     padding: "0",
   };
-  const styleEndPage = { fontSize: "40px", textAlign: "center" };
-  const styleBotton = { fontSize: "40px" };
+  const styleEndPage = { fontSize: "30px", textAlign: "center" };
+  const styleBotton = { fontSize: "60px" };
   const [actualPage, setActualPage] = useState(0);
   const [actualTale, setActualTale] = useState(0);
   const [flipped, setFlipped] = useState(false);
